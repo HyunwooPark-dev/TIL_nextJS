@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import styles from "@/app/page.module.css"
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -12,13 +13,16 @@ export const metadata: Metadata = {
 type Props = {
   children: React.ReactNode,
 };
+// 최상위 레이아웃의 children에는 app폴더 하위에 정의된 page.tsx 컴포넌트가 랜더링된다.
 export default function RootLayout({
   children,
 }: Props) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        {children}
+        <div className={styles.container}>
+          {children}
+        </div>
       </body>
     </html>
   )

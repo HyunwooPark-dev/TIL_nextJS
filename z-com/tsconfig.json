@@ -23,6 +23,8 @@
         "name": "next"
       }
     ],
+    // path alias 설정
+    // ex) path alias 사용 - @/components/Header
     "paths": {
       "@/*": [
         "./src/*"
