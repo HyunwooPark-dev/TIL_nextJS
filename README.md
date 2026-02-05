@@ -7,3 +7,4 @@
 # commit_5 : 패러렐 라우트 구조 설정 (beforeLogin, @modal)
 # commit_6 : 로그인 모달창 : 서버 -> 클라이언트 컴포넌트 전환
 # commit_7 : 로그인 모달창 : default.tsx, login.module.css 추가, 각 파일내부 css 경로수정
+# commit_8 : 인터셉팅 라우트 설정
