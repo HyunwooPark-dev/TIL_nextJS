@@ -8,3 +8,4 @@
 # commit_6 : 로그인 모달창 : 서버 -> 클라이언트 컴포넌트 전환
 # commit_7 : 로그인 모달창 : default.tsx, login.module.css 추가, 각 파일내부 css 경로수정
 # commit_8 : 인터셉팅 라우트 설정
+# commit_9 : private 폴더 처리(로그인 모달 페이지들이 갖는 공통파일)
