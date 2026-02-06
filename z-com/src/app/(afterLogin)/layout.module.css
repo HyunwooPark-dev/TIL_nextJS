@@ -1,0 +1,202 @@
+/* ===== 전체 컨테이너 ===== */
+.container {
+    /* 좌측(header) + 우측(main) 가로 배치 */
+    display: flex;
+    /* 자식 요소들 높이 맞춤 */
+    align-items: stretch;
+    background-color: #fff;
+    color: black;
+    margin: 0 auto;
+}
+
+/* ===== 왼쪽 섹션 (네비게이션 영역) ===== */
+.leftSectionWrapper {
+    display: flex;
+    /* 내부 요소를 오른쪽 끝에 배치 */
+    align-items: flex-end;
+    flex-direction: column;
+    /* 남은 공간 차지 (반응형 대비) */
+    flex-grow: 1;
+}
+
+.leftSection {
+    /* 네비게이션 고정 너비 */
+    width: 275px;
+    /* 동적 뷰포트 높이 (모바일 대응) */
+    height: 100dvh;
+    background-color: orange;
+}
+
+.leftSectionFixed {
+    /* 스크롤해도 고정 */
+    position: fixed;
+    /* 부모 너비 상속 (275px) */
+    width: inherit;
+    height: 100dvh;
+    /* 로고-nav-버튼 세로 배치 */
+    display: flex;
+    flex-direction: column;
+}
+
+.leftSectionFixed nav {
+    /* nav가 남은 공간 차지 → 버튼을 아래로 밀어냄 */
+    flex: 1;
+}
+
+.leftSectionFixed nav li {
+    /* 리스트 점(•) 제거 */
+    list-style-type: none;
+}
+
+/* ===== 로고 ===== */
+.logo {
+    display: inline-block;
+    height: 56px;
+    margin-top: 2px;
+}
+
+.logoPill {
+    width: 50px;
+    height: 50px;
+    /* 원형으로 만들기 */
+    border-radius: 50%;
+    /* 로고 이미지 가운데 정렬 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logoPill:hover {
+    /* 호버 시 연한 회색 배경 */
+    background-color: rgba(15, 20, 25, 0.1);
+}
+
+/* ===== 게시하기 버튼 ===== */
+.postButton {
+    margin: 16px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 52px;
+    /* 은은한 그림자 */
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 8px 28px;
+    /* 트위터 파란색 */
+    background-color: rgb(29, 155, 240);
+    width: 234px;
+    border: none;
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    font-size: 17px;
+    /* 둥근 버튼 */
+    border-radius: 26px;
+}
+
+.postButton:hover {
+    /* 호버 시 조금 더 진한 파란색 */
+    background-color: rgb(26, 140, 216);
+}
+
+/* ===== 오른쪽 섹션 (메인 + 사이드바) ===== */
+.rightSectionWrapper {
+    display: flex;
+    /* 내부 요소를 왼쪽 상단에 배치 */
+    align-items: flex-start;
+    height: 100dvh;
+    flex-direction: column;
+    /* 남은 공간 차지 */
+    flex-grow: 1;
+}
+
+.rightSectionInner {
+    height: 100%;
+    /* 메인(600) + 사이드바(350) + 여백 */
+    width: 990px;
+    /* 메인과 사이드바 양쪽 배치 */
+    display: flex;
+    justify-content: space-between;
+    background-color: cyan;
+}
+
+/* ===== 메인 콘텐츠 영역 ===== */
+.main {
+    /* 트위터 메인 피드 너비 */
+    width: 600px;
+    /* 스크롤 테스트용 (임시) */
+    height: 200dvh;
+}
+
+/* ===== 오른쪽 사이드바 (검색, 추천 등) ===== */
+.rightSection {
+    /* 사이드바 고정 너비 */
+    width: 350px;
+    height: 100%;
+}
+
+/* ===== 검색창 ===== */
+.search {
+    /* 스크롤해도 고정 */
+    position: fixed;
+    height: 42px;
+    /* 부모 너비 상속 (350px) */
+    width: inherit;
+    /* 둥근 검색창 (높이의 절반) */
+    border-radius: 21px;
+    /* 연한 회색 배경 */
+    background-color: rgb(239, 243, 244);
+    margin-top: 6px;
+    margin-bottom: 12px;
+    /* 아이콘, input 세로 가운데 정렬 */
+    display: flex;
+    align-items: center;
+}
+
+.search svg {
+    margin-left: 20px;
+    /* 검색 아이콘 색상 (회색) */
+    fill: rgb(83, 100, 113);
+}
+
+.search input {
+    /* 포커스 시 테두리 제거 */
+    outline: none;
+    /* 배경색 상속 */
+    background-color: inherit;
+    /* 테두리 제거 */
+    border: none;
+    padding: 12px;
+    margin-left: 5px;
+    font-size: 15px;
+}
+
+/* ===== 팔로우 추천 박스 ===== */
+.followRecommend {
+    font-size: 20px;
+    font-weight: bold;
+    /* 연한 회색 배경 */
+    background-color: rgb(247, 249, 249);
+    /* 둥근 모서리 */
+    border-radius: 16px;
+    margin: 12px 0;
+    padding: 12px 16px;
+}
+
+.followRecommend h3 {
+    /* 제목 아래 여백 */
+    padding-bottom: 12px;
+}
+
+/* 
+## 전체 레이아웃 구조
+┌─────────────────────────────────────────────────┐
+│                   .container                    │
+│  ┌──────────────┐  ┌──────────────────────────┐ │
+│  │ leftSection  │  │    rightSectionWrapper   │ │
+│  │              │  │  ┌───────────┬─────────┐ │ │
+│  │  [로고]       │  │  │  .main    │.rightSec│ │ │
+│  │  [nav]       │  │  │  (피드)    │(검색창)   │ │ │
+│  │  [게시버튼]    │  │  │           │(추천)     │ │ │
+│  │              │  │  │           │         │ │ │
+│  │  (fixed)     │  │  └───────────┴─────────┘ │ │
+│  └──────────────┘  └──────────────────────────┘ │
+└─────────────────────────────────────────────────┘ 
+*/
